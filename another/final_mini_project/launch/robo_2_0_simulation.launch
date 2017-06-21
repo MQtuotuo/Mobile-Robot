@@ -1,0 +1,22 @@
+<launch>
+
+<!-- start stage node -->
+
+<!-- start roomba driver node -->
+	<node pkg="roomrider_driver" type="roomrider_driver" output="screen" name="roomrider" >
+	</node>
+
+<!-- start laser driver node -->
+	<node pkg="sick300_driver" type="sick300_driver" output="screen" name="sick300" >
+	</node>
+
+
+<!-- start map server -->
+	<node pkg="map_server" type="map_server" name="map_server" args="$(find AIS_worlds)/LBH_floor_1.yaml">
+	</node>
+
+<!-- start robo_02 node -->
+	<node pkg="final_mini_project" type="robo_2_0" output="screen" name="Just_move">
+	</node>
+
+</launch>

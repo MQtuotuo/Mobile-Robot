@@ -1,0 +1,20 @@
+<launch>
+
+<!-- University of Bonn, Department of Computer Science VI,  LAB mobile robots -->
+<!-- Launch file using the stage simulation -->
+
+<!-- start roomba driver node -->
+	<node pkg="roomrider_driver" type="roomrider_driver" output="screen" name="roomrider" >
+	</node>
+
+<!-- start laser driver node -->
+	<node pkg="sick300_driver" type="sick300_driver" output="screen" name="sick300" >
+	</node>
+	
+
+<!-- start robo_05 node -->
+	<node pkg="experiment_05" type="robo_5_0" output="screen" name="dude">
+	</node>
+	
+
+</launch>

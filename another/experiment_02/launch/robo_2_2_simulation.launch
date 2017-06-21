@@ -1,0 +1,15 @@
+<launch>
+
+
+<!-- start roomba driver node -->
+	<node pkg="roomrider_driver" type="roomrider_driver" output="screen" name="roomrider" >
+	</node>
+
+<!-- start laser driver node -->
+	<node pkg="sick300_driver" type="sick300_driver" output="screen" name="sick300" >
+	</node>
+<!-- start robo_02 node -->
+	<node pkg="experiment_02" type="robo_2_2" output="screen" name="Just_move">
+	</node>
+
+</launch>

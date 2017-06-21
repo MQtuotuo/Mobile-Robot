@@ -1,0 +1,21 @@
+<launch>
+
+<!-- University of Bonn, Department of Computer Science VI,  LAB mobile robots -->
+<!-- Launch file using the stage simulation -->
+
+<param name="/use_sim_time" value="true" />
+
+<!-- start stage node -->
+	<node pkg="stage_ros" name="stageros" type="stageros" output="screen" args="$(find AIS_worlds)/LBH_floor_1.world">
+ <remap from="base_scan" to="laserscan"/>
+	</node>
+
+<!-- start tf -->
+    <node pkg="tf" type="static_transform_publisher" name="tf" args="33.7 -49.4 0 1.57 0 0 /map /odom 1000">
+    </node>
+
+<!-- start rviz -->
+ <node pkg="rviz" type="rviz" name="rviz" args="--display-config $(find final_mini_project)/rivz_cfg.rviz">
+ </node>
+
+</launch>
